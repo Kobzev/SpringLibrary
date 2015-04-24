@@ -8,10 +8,10 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/config/spring/applicationContext.xml</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -22,11 +22,11 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -40,17 +40,12 @@
         <url-pattern>*.faces</url-pattern>
     </servlet-mapping>
 
-
     <context-param>
         <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
         <param-value>.xhtml</param-value>
     </context-param>
 
-
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-
-
-
 </web-app>

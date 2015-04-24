@@ -23,7 +23,4 @@
             <listener ref="facesContextListener"/>
         </flow-execution-listeners>
     </flow-executor>
-
-
-
 </beans:beans>

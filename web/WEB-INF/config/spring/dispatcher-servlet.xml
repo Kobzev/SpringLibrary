@@ -10,7 +10,6 @@
 
     <mvc:resources location="/" mapping="/resources/**"/>
 
-
     <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
         <property name="flowRegistry" ref="flowRegistry"/>
     </bean>
@@ -19,28 +18,18 @@
         <property name="flowExecutor" ref="flowExecutor"/>
     </bean>
 
-
-
-
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass" value="org.springframework.faces.mvc.JsfView"/>
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".xhtml"/>
     </bean>
 
-
     <bean id="msg" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="/WEB-INF/locales/messages" />
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
 
-
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <property name="defaultLocale" value="ru" />
+        <property name="defaultLocale" value="ua" />
     </bean>
-
-
-
-
-
 </beans>

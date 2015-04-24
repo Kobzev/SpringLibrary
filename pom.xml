@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.javabegin.training.springlibrary</groupId>
-    <artifactId>LibraryFlow</artifactId>
+    <groupId>ua.kobzev.springlibrary</groupId>
+    <artifactId>SpringLibrary</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,8 +15,9 @@
         <slf4j-version>1.6.1</slf4j-version>
         <mojarra-version>2.2.10</mojarra-version>
         <primefaces-version>5.0</primefaces-version>
+        <hibernate-version>4.3.6.Final</hibernate-version>
+        <mySQL-connector-version>5.1.29</mySQL-connector-version>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
@@ -137,6 +138,17 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mySQL-connector-version}</version>
+        </dependency>
 
     </dependencies>
 
