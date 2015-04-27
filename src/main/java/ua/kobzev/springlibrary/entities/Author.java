@@ -4,13 +4,17 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
  * Created by Kostya on 24.04.2015.
  */
 @Entity
-public class Author {
+public class Author  implements Serializable {
+
+    private static final long serialVersionUID = 10000L;
+
     private long id;
     private String fio;
     private Date birthday;

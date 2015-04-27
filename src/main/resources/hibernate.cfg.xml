@@ -6,23 +6,23 @@
   <session-factory>
       <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
       <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/spring_library?zeroDateTimeBehavior=convertToNull</property>
+      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/springlibrary?zeroDateTimeBehavior=convertToNull</property>
       <property name="hibernate.show_sql">true</property>
-      <property name="hibernate.current_session_context_class">thread</property>
+      <!--<property name="hibernate.current_session_context_class">thread</property>-->
       <property name="hibernate.connection.datasource">jdbc/library</property>
       <property name="hibernate.connection.username">root</property>
       <property name="hibernate.connection.password">root</property>
     <!--<property name="connection.url">jdbc:mysql://localhost:3306/spring_library</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
-      <mapping resource="ua/kobzev/springlibrary/entities/Author.hbm.xml"/>
+      <mapping resource="ua.kobzev.sprinlibrary.entities/Author.hbm.xml"/>
       <mapping class="ua.kobzev.springlibrary.entities.Author"/>
-      <mapping resource="ua/kobzev/springlibrary/entities/Book.hbm.xml"/>
+      <mapping resource="ua.kobzev.sprinlibrary.entities/Book.hbm.xml"/>
       <mapping class="ua.kobzev.springlibrary.entities.Book"/>
-      <mapping resource="ua/kobzev/springlibrary/entities/Genre.hbm.xml"/>
+      <mapping resource="ua.kobzev.sprinlibrary.entities/Genre.hbm.xml"/>
       <mapping class="ua.kobzev.springlibrary.entities.Genre"/>
-      <mapping resource="ua/kobzev/springlibrary/entities/Publisher.hbm.xml"/>
+      <mapping resource="ua.kobzev.sprinlibrary.entities/Publisher.hbm.xml"/>
       <mapping class="ua.kobzev.springlibrary.entities.Publisher"/>
-      <mapping resource="ua/kobzev/springlibrary/entities/Vote.hbm.xml"/>
+      <mapping resource="ua.kobzev.sprinlibrary.entities/Vote.hbm.xml"/>
       <mapping class="ua.kobzev.springlibrary.entities.Vote"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->

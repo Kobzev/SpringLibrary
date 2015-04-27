@@ -4,12 +4,16 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by Kostya on 24.04.2015.
  */
 @Entity
-public class Genre {
+public class Genre  implements Serializable {
+
+    private static final long serialVersionUID = 30000L;
+
     private long id;
     private String name;
     private Long parent;
