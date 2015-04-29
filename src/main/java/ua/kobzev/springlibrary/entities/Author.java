@@ -70,4 +70,9 @@ public class Author  implements Serializable {
         result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return fio;
+    }
 }
