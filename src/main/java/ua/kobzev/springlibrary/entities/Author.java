@@ -19,6 +19,12 @@ public class Author  implements Serializable {
     private String fio;
     private Date birthday;
 
+    public Author(){}
+
+    public Author(String fio) {
+        this.fio = fio;
+    }
+
     @Id
     @Column(name = "id")
     public long getId() {

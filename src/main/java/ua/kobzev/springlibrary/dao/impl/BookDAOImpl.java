@@ -49,24 +49,42 @@ public class BookDAOImpl implements BookDAO {
         return createBookList(createBookCriteria());
     }
 
+    @Transactional
+    @Override
+    public Object getFieldValue(Long id, String fieldName) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Book.class);
+        criteria.setProjection(Property.forName(fieldName));
+        criteria.add(Restrictions.eq("id", id));
+        return criteria.uniqueResult();
+
+    }
+
+    @Transactional
     @Override
     public List<Book> getBooks(Author author) {
-        return createBookList(createBookCriteria().add(Restrictions.ilike("author.fio", author.getFio(), MatchMode.ANYWHERE)));
+        List<Book> books = createBookList(createBookCriteria().add(Restrictions.ilike("author.fio", author.getFio(), MatchMode.ANYWHERE)));
+        return books;
     }
 
+    @Transactional
     @Override
     public List<Book> getBooks(String bookName) {
-        return createBookList(createBookCriteria().add(Restrictions.ilike("b.name", bookName, MatchMode.ANYWHERE)));
+        List<Book> books = createBookList(createBookCriteria().add(Restrictions.ilike("b.name", bookName, MatchMode.ANYWHERE)));
+        return books;
     }
 
+    @Transactional
     @Override
     public List<Book> getBooks(Genre genre) {
-        return createBookList(createBookCriteria().add(Restrictions.ilike("genre.name", genre.getName(), MatchMode.ANYWHERE)));
+        List<Book> books = createBookList(createBookCriteria().add(Restrictions.eq("genre.id", genre.getId())));
+        return books;
     }
 
+    @Transactional
     @Override
     public List<Book> getBooks(Character letter) {
-        return createBookList(createBookCriteria().add(Restrictions.ilike("b.name", letter.toString(), MatchMode.START)));
+        List<Book> books = createBookList(createBookCriteria().add(Restrictions.ilike("b.name", letter.toString(), MatchMode.START)));
+        return books;
     }
 
     private DetachedCriteria createBookCriteria(){

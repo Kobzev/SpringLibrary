@@ -11,6 +11,7 @@
        ">
 
     <import resource="webflow.xml"/>
+    <import resource="controllers.xml"/>
 
     <context:component-scan base-package="ua.kobzev.springlibrary"/>
     <mvc:resources location="/" mapping="/resources/**"/>
@@ -60,6 +61,14 @@
     <tx:annotation-driven/>
     <bean class="org.springframework.orm.hibernate4.HibernateTransactionManager" id="transactionManager">
         <property ref="sessionFactory" name="sessionFactory"/>
+    </bean>
+
+    <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
+        <property name="attributes">
+            <map>
+                <entry key="libraryFacade" value-ref="libraryFacade"/>
+            </map>
+        </property>
     </bean>
 
     <mvc:interceptors>
